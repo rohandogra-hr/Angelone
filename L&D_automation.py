@@ -45,8 +45,13 @@ def replace_dash_with_null(value):
     return pd.NaT if value == '-' else value
 
 def convert_mins_to_hrs(value):
- 
-    return 0 if value == '-' else float(value) / 60
+    
+    if value =='-':
+        return 0 
+    elif value =='< 1':
+        return 1/60 
+    else:
+        return float(value) / 60
 
 def clean_text(text):
   
